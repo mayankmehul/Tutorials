@@ -1,0 +1,29 @@
+package test;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class RegexForStrings {
+	public static void main(String[] args) {
+		String s = "5 -> 66 -> 68 -> 42 -> 73 -> 25 -> 84 -> 63 -> 72 -> 20 -> 77 -> 38 -> 8 -> 99 -> 92 -> 49 -> 74 -> 45 -> 30 -> 51 -> 50 -> 95 -> 56 -> 19 -> 31 -> 26 -> 98 -> 67 -> 100 -> 2 -> 24 -> 6 -> 37 -> 69 -> 11 -> 16 -> 61 -> 23 -> 78 -> 27 -> 64 -> 87 -> 3 -> 85 -> 55 -> 22 -> 33 -> 62";
+		//String s1 = "{\"5\":{\"agentPwtCommRate\":0.0,\"agentSaleCommRate\":0.0,\"gameId\":5,\"gameName\":\"Bonus Lotto\",\"gameNameDev\":\"ZimLottoBonus\",\"gameNo\":5,\"govtComm\":0.0,\"highPrizeAmount\":0.0,\"priceMap\":{\"Direct6\":{\"betDispName\":\"Direct6\",\"unitPrice\":0.2,\"maxBetAmtMultiple\":100,\"betStatus\":\"ACTIVE\",\"betCode\":1,\"betOrder\":1},\"Perm6\":{\"betDispName\":\"Perm6\",\"unitPrice\":0.2,\"maxBetAmtMultiple\":100,\"betStatus\":\"ACTIVE\",\"betCode\":2,\"betOrder\":2}},\"prizePayoutRatio\":0.0,\"retPwtCommRate\":0.0,\"retSaleCommRate\":0.0,\"ticketExpiryPeriod\":60,\"vatAmount\":0.0,\"isDependent\":0,\"jackpotCounter\":0,\"jackpotLimit\":50000.0}}";
+		//String s2 = "{"5":{"agentPwtCommRate":0.0,"agentSaleCommRate":0.0,"gameId":5,"gameName":"Bonus Lotto","gameNameDev":"ZimLottoBonus","gameNo":5,"govtComm":0.0,"highPrizeAmount":0.0,"priceMap":{"Direct6":{"betDispName":"Direct6","unitPrice":0.2,"maxBetAmtMultiple":100,"betStatus":"ACTIVE","betCode":1,"betOrder":1},"Perm6":{"betDispName":"Perm6","unitPrice":0.2,"maxBetAmtMultiple":100,"betStatus":"ACTIVE","betCode":2,"betOrder":2}},"prizePayoutRatio":0.0,"retPwtCommRate":0.0,"retSaleCommRate":0.0,"ticketExpiryPeriod":60,"vatAmount":0.0,"isDependent":0,"jackpotCounter":0,"jackpotLimit":50000.0}}";
+		//String s3 = "{\"commonSaleData\":{\"isAdvancePlay\":false,\"drawData\":[],\"noOfDraws\":1,\"isDrawManual\":true,\"gameName\":\"ZimLottoBonus\"},\"betTypeData\":[{\"noPicked\":\"6\",\"betAmtMul\":1,\"isQp\":true,\"pickedNumbers\":\"03,09,10,11,28,40\",\"betName\":\"Direct6\",\"QPPreGenerated\":true}],\"noOfPanel\":1,\"totalPurchaseAmt\":\"0.2\"}";
+		//String s4 = "{"commonSaleData":{"isAdvancePlay":false,"drawData":[],"noOfDraws":1,"isDrawManual":true,"gameName":"ZimLottoBonus"},"betTypeData":[{"noPicked":"6","betAmtMul":1,"isQp":true,"pickedNumbers":"03,09,10,11,28,40","betName":"Direct6","QPPreGenerated":true}],"noOfPanel":1,"totalPurchaseAmt":"0.2"}";
+		//String s5 = "{\"commonSaleData\":{\"isAdvancePlay\":false,\"drawData\":[],\"noOfDraws\":1,\"isDrawManual\":true,\"gameName\":\"ZimLottoBonus\"},\"betTypeData\":[{\"noPicked\":\"6\",\"betAmtMul\":1,\"isQp\":true,\"pickedNumbers\":\"03,05,13,28,37,41\",\"betName\":\"Direct6\",\"QPPreGenerated\":true},{\"noPicked\":\"6\",\"betAmtMul\":1,\"isQp\":true,\"pickedNumbers\":\"02,06,13,21,28,36\",\"betName\":\"Direct6\",\"QPPreGenerated\":true},{\"noPicked\":\"6\",\"betAmtMul\":1,\"isQp\":true,\"pickedNumbers\":\"21,28,30,35,39,42\",\"betName\":\"Direct6\",\"QPPreGenerated\":true},{\"noPicked\":\"6\",\"betAmtMul\":1,\"isQp\":true,\"pickedNumbers\":\"01,04,08,10,22,42\",\"betName\":\"Direct6\",\"QPPreGenerated\":true}],\"noOfPanel\":4,\"totalPurchaseAmt\":\"0.8\"}";
+		//String s6 = "{"commonSaleData":{"isAdvancePlay":false,"drawData":[],"noOfDraws":1,"isDrawManual":true,"gameName":"ZimLottoBonus"},"betTypeData":[{"noPicked":"6","betAmtMul":1,"isQp":true,"pickedNumbers":"03,05,13,28,37,41","betName":"Direct6","QPPreGenerated":true},{"noPicked":"6","betAmtMul":1,"isQp":true,"pickedNumbers":"02,06,13,21,28,36","betName":"Direct6","QPPreGenerated":true},{"noPicked":"6","betAmtMul":1,"isQp":true,"pickedNumbers":"21,28,30,35,39,42","betName":"Direct6","QPPreGenerated":true},{"noPicked":"6","betAmtMul":1,"isQp":true,"pickedNumbers":"01,04,08,10,22,42","betName":"Direct6","QPPreGenerated":true}],"noOfPanel":4,"totalPurchaseAmt":"0.8"}";
+		//String s7 = "{\"commonSaleData\":{\"isAdvancePlay\":false,\"drawData\":[],\"noOfDraws\":1,\"isDrawManual\":true,\"gameName\":\"ZimLottoBonus\"},\"betTypeData\":[{\"noPicked\":8,\"betAmtMul\":1,\"isQp\":true,\"pickedNumbers\":\"07,08,10,12,27,31,35,37\",\"betName\":\"Perm6\",\"QPPreGenerated\":true}],\"noOfPanel\":1,\"totalPurchaseAmt\":\"5.6\"}";
+		//String s8 = "{"commonSaleData":{"isAdvancePlay":false,"drawData":[],"noOfDraws":1,"isDrawManual":true,"gameName":"ZimLottoBonus"},"betTypeData":[{"noPicked":8,"betAmtMul":1,"isQp":true,"pickedNumbers":"07,08,10,12,27,31,35,37","betName":"Perm6","QPPreGenerated":true}],"noOfPanel":1,"totalPurchaseAmt":"5.6"}";
+		
+		String a = s.replaceAll("[\\s]+[\\S]+[\\s]", ", ");
+
+		Map<Integer, Map<Integer, String>> m = new HashMap<Integer, Map<Integer,String>>();
+		
+		System.out.println(a);
+	}
+}
+
+
+//{"isSuccess":true,"errorMsg":"","mainData":{"commonSaleData":{"ticketNumber":"123","barcodeCount":"123123","gameName":"6/42","purchaseDate":"1","purchaseTime":"2","purchaseAmt":2,"drawData":[{"drawDate":"2016-10-22","drawTime":"19:45:00.0"},{"drawDate":"2016-10-22","drawTime":"19:45:00.0"},{"drawDate":"2016-10-22","drawTime":"19:45:00.0"}]},"betTypeData":[{"isQp":true,"betName":"Direct6","betAmtMul":1,"panelPrice":0,"pickedNumbers":["03,05,13,28,37,41","02,06,13,21,28,36","21,28,30,35,39,42","01,04,08,10,22,42"],"numberPicked":6,"unitPrice":0,"noOfLines":0}]},"isPromo":false}
+
+//{"commonSaleData":{"isAdvancePlay":false,"drawData":[],"noOfDraws":1,"isDrawManual":true,"gameName":"ZimLottoBonus"},"betTypeData":[{"noPicked":"6","betAmtMul":1,"isQp":true,"pickedNumbers":"03,05,13,28,37,41","betName":"Direct6","QPPreGenerated":true},{"noPicked":"6","betAmtMul":1,"isQp":true,"pickedNumbers":"02,06,13,21,28,36","betName":"Direct6","QPPreGenerated":true},{"noPicked":"6","betAmtMul":1,"isQp":true,"pickedNumbers":"21,28,30,35,39,42","betName":"Direct6","QPPreGenerated":true},{"noPicked":"6","betAmtMul":1,"isQp":true,"pickedNumbers":"01,04,08,10,22,42","betName":"Direct6","QPPreGenerated":true}],"noOfPanel":4,"totalPurchaseAmt":"0.8"}
