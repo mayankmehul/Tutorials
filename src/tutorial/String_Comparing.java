@@ -13,6 +13,7 @@ public class String_Comparing {
 		s1 = sc.next();
 		System.out.println("Enter your second string : ");
 		s2 = sc.next();
+		sc.close();
 		c1 = new char[s1.length()];
 		c2 = new char[s2.length()];
 		for (int i = 0; i < s1.length(); i++) {

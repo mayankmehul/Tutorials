@@ -10,6 +10,7 @@ public class Smallest_Twins {
 		low = sc.nextInt();
 		System.out.println("High = ");
 		high = sc.nextInt();
+		sc.close();
 		find_Twins(low, high);
 		System.out.println("Program Terminates.");
 	}

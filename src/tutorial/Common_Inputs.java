@@ -13,6 +13,7 @@ public class Common_Inputs {
 		for (int i = 0; i < n; i++) {
 			a[i] = sc.nextInt();
 		}
+		sc.close();
 		return a;
 	}
 
@@ -27,6 +28,7 @@ public class Common_Inputs {
 			System.out.println(i);
 			a.add(sc.nextInt());
 		}
+		sc.close();
 		return a;
 	}
 }

@@ -14,7 +14,7 @@ public class Count_Triplets {
 		}
 		System.out.println("Enter the sum : ");
 		int sum = sc.nextInt();
-
+		sc.close();
 		Common_Sorting cs = new Common_Sorting();
 		arr = cs.sortIntArray(arr);
 		for (int i = 0; i < n; i++) {
